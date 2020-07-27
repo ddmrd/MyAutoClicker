@@ -49,7 +49,8 @@ namespace AutoClicker
           public static  System.Windows.Forms.Timer MouseTimer = new System.Windows.Forms.Timer();
 
             public static Random RandomTimer = new Random();
-            public static Random MouseHoldValue = new Random();           
+            public static Random MouseHoldValue = new Random();
+            public static Random DoubleClickWaitValue = new Random();
 
             public static void LeftMouseClick(int xpos, int ypos, int sleep)
             {
@@ -96,10 +97,10 @@ namespace AutoClicker
 
             if (LeftMouseHoldTrueOrFalsechkbx.Checked == false)
             {
-                LeftMouseHoldTimelbl.Text = LeftMouseHoldTime.Text; 
+                LeftMouseHoldTimelbl.Text = "Left Button Hold :" + LeftMouseHoldTime.Text; 
             }
 
-            if (RandomClickRbtn.Checked == true)
+            if (RandomClickRbtn.Checked == true & SingleClickChkbx.Checked == true) // single click
             {
                 Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
                 MainClicktimer.Interval = Mouse.RandomTimer.Next(Convert.ToInt32(LowerRandomBoundtxtbx.Text), Convert.ToInt32(UpperRandomBoundtxtbx.Text));
@@ -107,14 +108,44 @@ namespace AutoClicker
                 ClickCountlbl.Text = "Times Clicked: " + Convert.ToString(Mouse.ClickedAmount);
             }
 
-            if (IntervalClickModeRbtn.Checked == true)
+            if (IntervalClickModeRbtn.Checked == true & SingleClickChkbx.Checked == true) // single click
             {
                 Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
                 MainClicktimer.Interval = Convert.ToInt32(ClickIntervalInputtxtbx.Text);
                 RandomClickTimeValuelbl.Text = "click Interval: " + MainClicktimer.Interval.ToString();
                 ClickCountlbl.Text = "Times Clicked: " + Convert.ToString(Mouse.ClickedAmount);                
-            }               
-           
+            }
+
+            if (RandomClickRbtn.Checked == true & DoubleClickchxbx.Checked == true) //double click
+            {
+                Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
+                LeftMouseHoldTime.Text =  Mouse.MouseHoldValue.Next(Convert.ToInt32(LowerBoundMouseHoldtxtbx.Text), Convert.ToInt32(UpperBoundMouseHoldtxtbx.Text)).ToString() ;
+                LeftMouseHoldTimelbl.Text = "Left Button Hold :" + LeftMouseHoldTime.Text;
+
+                int f = Convert.ToInt32(Mouse.DoubleClickWaitValue.Next(Convert.ToInt32(DoubleClickLowerBoundwaittxtbx.Text), Convert.ToInt32(DoubleClickupperBoundwaittxtbx.Text)));
+                DoubleClickWaitlbl.Text = "Double Click Wait = (ms) " + f;
+                Thread.Sleep(f);
+                
+                Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
+                RandomClickTimeValuelbl.Text = "click Interval: " + MainClicktimer.Interval.ToString();
+                MainClicktimer.Interval = Mouse.RandomTimer.Next(Convert.ToInt32(LowerRandomBoundtxtbx.Text), Convert.ToInt32(UpperRandomBoundtxtbx.Text));
+                ClickCountlbl.Text = "Times Clicked: " + Convert.ToString(Mouse.ClickedAmount);
+            }
+
+            if (IntervalClickModeRbtn.Checked == true & DoubleClickchxbx.Checked == true) // double click
+            {
+                Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
+                LeftMouseHoldTime.Text = Mouse.MouseHoldValue.Next(Convert.ToInt32(LowerBoundMouseHoldtxtbx.Text), Convert.ToInt32(UpperBoundMouseHoldtxtbx.Text)).ToString() ;
+                LeftMouseHoldTimelbl.Text = "Left Button Hold :" + LeftMouseHoldTime.Text;
+                int f = Convert.ToInt32(Mouse.DoubleClickWaitValue.Next(Convert.ToInt32(DoubleClickLowerBoundwaittxtbx.Text), Convert.ToInt32(DoubleClickupperBoundwaittxtbx.Text)));
+                DoubleClickWaitlbl.Text = "Double Click Wait = (ms) " + f;
+                Thread.Sleep(f);
+                Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
+                MainClicktimer.Interval = Convert.ToInt32(ClickIntervalInputtxtbx.Text);
+                RandomClickTimeValuelbl.Text = "click Interval: " + MainClicktimer.Interval.ToString();
+                ClickCountlbl.Text = "Times Clicked: " + Convert.ToString(Mouse.ClickedAmount);
+            }
+
         }                
 
         private void StartClickbtn_Click(object sender, EventArgs e)
@@ -204,7 +235,9 @@ namespace AutoClicker
             MainClicktimer.Interval = 150;
             StopClickingBtn.Enabled = false;
             IntervalClickModeRbtn.Checked = true;
-          
+            SingleClickChkbx.Checked = true;
+
+
         }
 
         private void IntervalClickModeRbtn_CheckedChanged(object sender, EventArgs e)
@@ -231,7 +264,7 @@ namespace AutoClicker
         {
             if  (Convert.ToInt32(UpperRandomBoundtxtbx.Text) < Convert.ToInt32(LowerRandomBoundtxtbx.Text))
             {
-                UpperRandomBoundtxtbx.Text = Convert.ToInt32( (LowerRandomBoundtxtbx.Text) + 1) .ToString();
+                UpperRandomBoundtxtbx.Text = (Convert.ToInt32(LowerRandomBoundtxtbx.Text)+1).ToString();
             }
             if (RandomClickRbtn.Checked == true)
             {
@@ -295,6 +328,58 @@ namespace AutoClicker
             {
                 e.Handled = true;
             }
+        }
+
+        private void SingleClickChkbx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SingleClickChkbx.Checked == true)
+            {
+                DoubleClickchxbx.Checked = false;
+            }
+
+            if (SingleClickChkbx.Checked == false)
+            {
+                DoubleClickchxbx.Checked = true;
+            }
+        }
+
+        private void DoubleClickchxbx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DoubleClickchxbx.Checked == true)
+            {
+                SingleClickChkbx.Checked = false;
+            }
+
+            if (DoubleClickchxbx.Checked == false)
+            {
+                SingleClickChkbx.Checked = true;
+            }
+        }
+
+        private void DoubleClickupperBoundwaittxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char inputchar = e.KeyChar;
+            if (!Char.IsDigit(inputchar) && inputchar != 8)
+            {
+                e.Handled = true;
+          
+            }
+        }
+
+        private void DoubleClickLowerBoundwaittxtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char inputchar = e.KeyChar;
+            if (!Char.IsDigit(inputchar) && inputchar != 8)
+            {
+                e.Handled = true;
+            }   
+
+
+        }
+
+        private void DoubleClickupperBoundwaittxtbx_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

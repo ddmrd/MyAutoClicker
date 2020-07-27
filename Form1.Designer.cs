@@ -56,6 +56,13 @@
             this.UpperBoundMouseHoldlbl = new System.Windows.Forms.Label();
             this.LeftMouseHoldTrueOrFalsechkbx = new System.Windows.Forms.CheckBox();
             this.LeftMouseHoldTimelbl = new System.Windows.Forms.Label();
+            this.SingleClickChkbx = new System.Windows.Forms.CheckBox();
+            this.DoubleClickchxbx = new System.Windows.Forms.CheckBox();
+            this.DoubleClickLowerBoundwaittxtbx = new System.Windows.Forms.TextBox();
+            this.DoubleClickupperBoundwaittxtbx = new System.Windows.Forms.TextBox();
+            this.LowerDoubleClicikWaitlbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DoubleClickWaitlbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartClickbtn
@@ -304,9 +311,79 @@
             this.LeftMouseHoldTimelbl.AutoSize = true;
             this.LeftMouseHoldTimelbl.Location = new System.Drawing.Point(464, 394);
             this.LeftMouseHoldTimelbl.Name = "LeftMouseHoldTimelbl";
-            this.LeftMouseHoldTimelbl.Size = new System.Drawing.Size(35, 13);
+            this.LeftMouseHoldTimelbl.Size = new System.Drawing.Size(79, 13);
             this.LeftMouseHoldTimelbl.TabIndex = 24;
-            this.LeftMouseHoldTimelbl.Text = "label2";
+            this.LeftMouseHoldTimelbl.Text = "LeftMouseHold";
+            // 
+            // SingleClickChkbx
+            // 
+            this.SingleClickChkbx.AutoSize = true;
+            this.SingleClickChkbx.Location = new System.Drawing.Point(22, 181);
+            this.SingleClickChkbx.Name = "SingleClickChkbx";
+            this.SingleClickChkbx.Size = new System.Drawing.Size(81, 17);
+            this.SingleClickChkbx.TabIndex = 25;
+            this.SingleClickChkbx.Text = "Single Click";
+            this.SingleClickChkbx.UseVisualStyleBackColor = true;
+            this.SingleClickChkbx.CheckedChanged += new System.EventHandler(this.SingleClickChkbx_CheckedChanged);
+            // 
+            // DoubleClickchxbx
+            // 
+            this.DoubleClickchxbx.AutoSize = true;
+            this.DoubleClickchxbx.Location = new System.Drawing.Point(22, 204);
+            this.DoubleClickchxbx.Name = "DoubleClickchxbx";
+            this.DoubleClickchxbx.Size = new System.Drawing.Size(86, 17);
+            this.DoubleClickchxbx.TabIndex = 26;
+            this.DoubleClickchxbx.Text = "Double Click";
+            this.DoubleClickchxbx.UseVisualStyleBackColor = true;
+            this.DoubleClickchxbx.CheckedChanged += new System.EventHandler(this.DoubleClickchxbx_CheckedChanged);
+            // 
+            // DoubleClickLowerBoundwaittxtbx
+            // 
+            this.DoubleClickLowerBoundwaittxtbx.Location = new System.Drawing.Point(211, 231);
+            this.DoubleClickLowerBoundwaittxtbx.MaxLength = 3;
+            this.DoubleClickLowerBoundwaittxtbx.Name = "DoubleClickLowerBoundwaittxtbx";
+            this.DoubleClickLowerBoundwaittxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DoubleClickLowerBoundwaittxtbx.TabIndex = 27;
+            this.DoubleClickLowerBoundwaittxtbx.Text = "150";
+            this.DoubleClickLowerBoundwaittxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DoubleClickLowerBoundwaittxtbx_KeyPress);
+            // 
+            // DoubleClickupperBoundwaittxtbx
+            // 
+            this.DoubleClickupperBoundwaittxtbx.Location = new System.Drawing.Point(211, 257);
+            this.DoubleClickupperBoundwaittxtbx.MaxLength = 3;
+            this.DoubleClickupperBoundwaittxtbx.Name = "DoubleClickupperBoundwaittxtbx";
+            this.DoubleClickupperBoundwaittxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DoubleClickupperBoundwaittxtbx.TabIndex = 28;
+            this.DoubleClickupperBoundwaittxtbx.Text = "280";
+            this.DoubleClickupperBoundwaittxtbx.TextChanged += new System.EventHandler(this.DoubleClickupperBoundwaittxtbx_TextChanged);
+            this.DoubleClickupperBoundwaittxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DoubleClickupperBoundwaittxtbx_KeyPress);
+            // 
+            // LowerDoubleClicikWaitlbl
+            // 
+            this.LowerDoubleClicikWaitlbl.AutoSize = true;
+            this.LowerDoubleClicikWaitlbl.Location = new System.Drawing.Point(24, 234);
+            this.LowerDoubleClicikWaitlbl.Name = "LowerDoubleClicikWaitlbl";
+            this.LowerDoubleClicikWaitlbl.Size = new System.Drawing.Size(170, 13);
+            this.LowerDoubleClicikWaitlbl.TabIndex = 29;
+            this.LowerDoubleClicikWaitlbl.Text = "Time Between Double Click Lower";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 260);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(170, 13);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Time Between Double Click Upper";
+            // 
+            // DoubleClickWaitlbl
+            // 
+            this.DoubleClickWaitlbl.AutoSize = true;
+            this.DoubleClickWaitlbl.Location = new System.Drawing.Point(22, 296);
+            this.DoubleClickWaitlbl.Name = "DoubleClickWaitlbl";
+            this.DoubleClickWaitlbl.Size = new System.Drawing.Size(92, 13);
+            this.DoubleClickWaitlbl.TabIndex = 31;
+            this.DoubleClickWaitlbl.Text = "Double Click Wait";
             // 
             // MainFormScreenfrm
             // 
@@ -314,6 +391,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(717, 492);
+            this.Controls.Add(this.DoubleClickWaitlbl);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.LowerDoubleClicikWaitlbl);
+            this.Controls.Add(this.DoubleClickupperBoundwaittxtbx);
+            this.Controls.Add(this.DoubleClickLowerBoundwaittxtbx);
+            this.Controls.Add(this.DoubleClickchxbx);
+            this.Controls.Add(this.SingleClickChkbx);
             this.Controls.Add(this.LeftMouseHoldTimelbl);
             this.Controls.Add(this.LeftMouseHoldTrueOrFalsechkbx);
             this.Controls.Add(this.UpperBoundMouseHoldlbl);
@@ -377,6 +461,13 @@
         private System.Windows.Forms.Label UpperBoundMouseHoldlbl;
         private System.Windows.Forms.CheckBox LeftMouseHoldTrueOrFalsechkbx;
         private System.Windows.Forms.Label LeftMouseHoldTimelbl;
+        private System.Windows.Forms.CheckBox SingleClickChkbx;
+        private System.Windows.Forms.CheckBox DoubleClickchxbx;
+        private System.Windows.Forms.TextBox DoubleClickLowerBoundwaittxtbx;
+        private System.Windows.Forms.TextBox DoubleClickupperBoundwaittxtbx;
+        private System.Windows.Forms.Label LowerDoubleClicikWaitlbl;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label DoubleClickWaitlbl;
     }
 }
 
