@@ -63,6 +63,9 @@
             this.LowerDoubleClicikWaitlbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DoubleClickWaitlbl = new System.Windows.Forms.Label();
+            this.TopActivechkbx = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartClickbtn
@@ -92,7 +95,7 @@
             // 
             // ClickIntervalInputtxtbx
             // 
-            this.ClickIntervalInputtxtbx.Location = new System.Drawing.Point(234, 35);
+            this.ClickIntervalInputtxtbx.Location = new System.Drawing.Point(234, 37);
             this.ClickIntervalInputtxtbx.MaxLength = 8;
             this.ClickIntervalInputtxtbx.Name = "ClickIntervalInputtxtbx";
             this.ClickIntervalInputtxtbx.Size = new System.Drawing.Size(100, 20);
@@ -105,7 +108,7 @@
             // ClickIntervallbl
             // 
             this.ClickIntervallbl.AutoSize = true;
-            this.ClickIntervallbl.Location = new System.Drawing.Point(24, 42);
+            this.ClickIntervallbl.Location = new System.Drawing.Point(24, 44);
             this.ClickIntervallbl.Name = "ClickIntervallbl";
             this.ClickIntervallbl.Size = new System.Drawing.Size(142, 13);
             this.ClickIntervallbl.TabIndex = 3;
@@ -113,7 +116,7 @@
             // 
             // LeftMouseHoldTime
             // 
-            this.LeftMouseHoldTime.Location = new System.Drawing.Point(234, 67);
+            this.LeftMouseHoldTime.Location = new System.Drawing.Point(234, 69);
             this.LeftMouseHoldTime.MaxLength = 3;
             this.LeftMouseHoldTime.Name = "LeftMouseHoldTime";
             this.LeftMouseHoldTime.Size = new System.Drawing.Size(100, 20);
@@ -126,7 +129,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 70);
+            this.label1.Location = new System.Drawing.Point(24, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 13);
             this.label1.TabIndex = 5;
@@ -165,7 +168,7 @@
             // TimeElsapsedlbl
             // 
             this.TimeElsapsedlbl.AutoSize = true;
-            this.TimeElsapsedlbl.Location = new System.Drawing.Point(25, 364);
+            this.TimeElsapsedlbl.Location = new System.Drawing.Point(26, 394);
             this.TimeElsapsedlbl.Name = "TimeElsapsedlbl";
             this.TimeElsapsedlbl.Size = new System.Drawing.Size(72, 13);
             this.TimeElsapsedlbl.TabIndex = 9;
@@ -179,7 +182,7 @@
             // TotalTimeElapsedlbl
             // 
             this.TotalTimeElapsedlbl.AutoSize = true;
-            this.TotalTimeElapsedlbl.Location = new System.Drawing.Point(24, 394);
+            this.TotalTimeElapsedlbl.Location = new System.Drawing.Point(25, 424);
             this.TotalTimeElapsedlbl.Name = "TotalTimeElapsedlbl";
             this.TotalTimeElapsedlbl.Size = new System.Drawing.Size(97, 13);
             this.TotalTimeElapsedlbl.TabIndex = 10;
@@ -188,7 +191,7 @@
             // IntervalClickModeRbtn
             // 
             this.IntervalClickModeRbtn.AutoSize = true;
-            this.IntervalClickModeRbtn.Location = new System.Drawing.Point(27, 12);
+            this.IntervalClickModeRbtn.Location = new System.Drawing.Point(27, 14);
             this.IntervalClickModeRbtn.Name = "IntervalClickModeRbtn";
             this.IntervalClickModeRbtn.Size = new System.Drawing.Size(124, 17);
             this.IntervalClickModeRbtn.TabIndex = 11;
@@ -200,7 +203,7 @@
             // RandomClickTimeValuelbl
             // 
             this.RandomClickTimeValuelbl.AutoSize = true;
-            this.RandomClickTimeValuelbl.Location = new System.Drawing.Point(464, 364);
+            this.RandomClickTimeValuelbl.Location = new System.Drawing.Point(30, 256);
             this.RandomClickTimeValuelbl.Name = "RandomClickTimeValuelbl";
             this.RandomClickTimeValuelbl.Size = new System.Drawing.Size(68, 13);
             this.RandomClickTimeValuelbl.TabIndex = 17;
@@ -209,7 +212,7 @@
             // LowerRandomboundlbl
             // 
             this.LowerRandomboundlbl.AutoSize = true;
-            this.LowerRandomboundlbl.Location = new System.Drawing.Point(464, 42);
+            this.LowerRandomboundlbl.Location = new System.Drawing.Point(451, 102);
             this.LowerRandomboundlbl.Name = "LowerRandomboundlbl";
             this.LowerRandomboundlbl.Size = new System.Drawing.Size(112, 13);
             this.LowerRandomboundlbl.TabIndex = 12;
@@ -218,7 +221,7 @@
             // UpperRandomboundlbl
             // 
             this.UpperRandomboundlbl.AutoSize = true;
-            this.UpperRandomboundlbl.Location = new System.Drawing.Point(464, 74);
+            this.UpperRandomboundlbl.Location = new System.Drawing.Point(451, 134);
             this.UpperRandomboundlbl.Name = "UpperRandomboundlbl";
             this.UpperRandomboundlbl.Size = new System.Drawing.Size(112, 13);
             this.UpperRandomboundlbl.TabIndex = 13;
@@ -226,30 +229,30 @@
             // 
             // LowerRandomBoundtxtbx
             // 
-            this.LowerRandomBoundtxtbx.Location = new System.Drawing.Point(605, 35);
+            this.LowerRandomBoundtxtbx.Location = new System.Drawing.Point(592, 95);
             this.LowerRandomBoundtxtbx.MaxLength = 6;
             this.LowerRandomBoundtxtbx.Name = "LowerRandomBoundtxtbx";
             this.LowerRandomBoundtxtbx.Size = new System.Drawing.Size(100, 20);
             this.LowerRandomBoundtxtbx.TabIndex = 14;
-            this.LowerRandomBoundtxtbx.Text = "1000";
+            this.LowerRandomBoundtxtbx.Text = "9000";
             this.LowerRandomBoundtxtbx.TextChanged += new System.EventHandler(this.LowerRandomBoundBtn_TextChanged);
             this.LowerRandomBoundtxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LowerRandomBoundBtn_KeyPress);
             // 
             // UpperRandomBoundtxtbx
             // 
-            this.UpperRandomBoundtxtbx.Location = new System.Drawing.Point(605, 71);
+            this.UpperRandomBoundtxtbx.Location = new System.Drawing.Point(592, 131);
             this.UpperRandomBoundtxtbx.MaxLength = 6;
             this.UpperRandomBoundtxtbx.Name = "UpperRandomBoundtxtbx";
             this.UpperRandomBoundtxtbx.Size = new System.Drawing.Size(100, 20);
             this.UpperRandomBoundtxtbx.TabIndex = 15;
-            this.UpperRandomBoundtxtbx.Text = "3000";
+            this.UpperRandomBoundtxtbx.Text = "19000";
             this.UpperRandomBoundtxtbx.TextChanged += new System.EventHandler(this.UpperRandomBoundbtn_TextChanged);
             this.UpperRandomBoundtxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UpperRandomBoundbtn_KeyPress);
             // 
             // RandomClickRbtn
             // 
             this.RandomClickRbtn.AutoSize = true;
-            this.RandomClickRbtn.Location = new System.Drawing.Point(467, 12);
+            this.RandomClickRbtn.Location = new System.Drawing.Point(454, 72);
             this.RandomClickRbtn.Name = "RandomClickRbtn";
             this.RandomClickRbtn.Size = new System.Drawing.Size(170, 17);
             this.RandomClickRbtn.TabIndex = 16;
@@ -260,28 +263,28 @@
             // 
             // LowerBoundMouseHoldtxtbx
             // 
-            this.LowerBoundMouseHoldtxtbx.Location = new System.Drawing.Point(605, 126);
+            this.LowerBoundMouseHoldtxtbx.Location = new System.Drawing.Point(592, 186);
             this.LowerBoundMouseHoldtxtbx.MaxLength = 5;
             this.LowerBoundMouseHoldtxtbx.Name = "LowerBoundMouseHoldtxtbx";
             this.LowerBoundMouseHoldtxtbx.Size = new System.Drawing.Size(100, 20);
             this.LowerBoundMouseHoldtxtbx.TabIndex = 18;
-            this.LowerBoundMouseHoldtxtbx.Text = "150";
+            this.LowerBoundMouseHoldtxtbx.Text = "108";
             this.LowerBoundMouseHoldtxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LowerBoundMouseHoldtxtbx_KeyPress);
             // 
             // UpperBoundMouseHoldtxtbx
             // 
-            this.UpperBoundMouseHoldtxtbx.Location = new System.Drawing.Point(605, 163);
+            this.UpperBoundMouseHoldtxtbx.Location = new System.Drawing.Point(592, 223);
             this.UpperBoundMouseHoldtxtbx.MaxLength = 5;
             this.UpperBoundMouseHoldtxtbx.Name = "UpperBoundMouseHoldtxtbx";
             this.UpperBoundMouseHoldtxtbx.Size = new System.Drawing.Size(100, 20);
             this.UpperBoundMouseHoldtxtbx.TabIndex = 19;
-            this.UpperBoundMouseHoldtxtbx.Text = "310";
+            this.UpperBoundMouseHoldtxtbx.Text = "360";
             this.UpperBoundMouseHoldtxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UpperBoundMouseHoldtxtbx_KeyPress);
             // 
             // LowerBoundMouseHoldlbl
             // 
             this.LowerBoundMouseHoldlbl.AutoSize = true;
-            this.LowerBoundMouseHoldlbl.Location = new System.Drawing.Point(464, 133);
+            this.LowerBoundMouseHoldlbl.Location = new System.Drawing.Point(451, 193);
             this.LowerBoundMouseHoldlbl.Name = "LowerBoundMouseHoldlbl";
             this.LowerBoundMouseHoldlbl.Size = new System.Drawing.Size(121, 13);
             this.LowerBoundMouseHoldlbl.TabIndex = 20;
@@ -290,7 +293,7 @@
             // UpperBoundMouseHoldlbl
             // 
             this.UpperBoundMouseHoldlbl.AutoSize = true;
-            this.UpperBoundMouseHoldlbl.Location = new System.Drawing.Point(464, 166);
+            this.UpperBoundMouseHoldlbl.Location = new System.Drawing.Point(451, 226);
             this.UpperBoundMouseHoldlbl.Name = "UpperBoundMouseHoldlbl";
             this.UpperBoundMouseHoldlbl.Size = new System.Drawing.Size(121, 13);
             this.UpperBoundMouseHoldlbl.TabIndex = 21;
@@ -299,7 +302,7 @@
             // LeftMouseHoldTrueOrFalsechkbx
             // 
             this.LeftMouseHoldTrueOrFalsechkbx.AutoSize = true;
-            this.LeftMouseHoldTrueOrFalsechkbx.Location = new System.Drawing.Point(467, 103);
+            this.LeftMouseHoldTrueOrFalsechkbx.Location = new System.Drawing.Point(454, 163);
             this.LeftMouseHoldTrueOrFalsechkbx.Name = "LeftMouseHoldTrueOrFalsechkbx";
             this.LeftMouseHoldTrueOrFalsechkbx.Size = new System.Drawing.Size(147, 17);
             this.LeftMouseHoldTrueOrFalsechkbx.TabIndex = 23;
@@ -309,7 +312,7 @@
             // LeftMouseHoldTimelbl
             // 
             this.LeftMouseHoldTimelbl.AutoSize = true;
-            this.LeftMouseHoldTimelbl.Location = new System.Drawing.Point(464, 394);
+            this.LeftMouseHoldTimelbl.Location = new System.Drawing.Point(30, 230);
             this.LeftMouseHoldTimelbl.Name = "LeftMouseHoldTimelbl";
             this.LeftMouseHoldTimelbl.Size = new System.Drawing.Size(79, 13);
             this.LeftMouseHoldTimelbl.TabIndex = 24;
@@ -318,7 +321,7 @@
             // SingleClickChkbx
             // 
             this.SingleClickChkbx.AutoSize = true;
-            this.SingleClickChkbx.Location = new System.Drawing.Point(22, 181);
+            this.SingleClickChkbx.Location = new System.Drawing.Point(28, 120);
             this.SingleClickChkbx.Name = "SingleClickChkbx";
             this.SingleClickChkbx.Size = new System.Drawing.Size(81, 17);
             this.SingleClickChkbx.TabIndex = 25;
@@ -329,7 +332,7 @@
             // DoubleClickchxbx
             // 
             this.DoubleClickchxbx.AutoSize = true;
-            this.DoubleClickchxbx.Location = new System.Drawing.Point(22, 204);
+            this.DoubleClickchxbx.Location = new System.Drawing.Point(28, 143);
             this.DoubleClickchxbx.Name = "DoubleClickchxbx";
             this.DoubleClickchxbx.Size = new System.Drawing.Size(86, 17);
             this.DoubleClickchxbx.TabIndex = 26;
@@ -339,17 +342,17 @@
             // 
             // DoubleClickLowerBoundwaittxtbx
             // 
-            this.DoubleClickLowerBoundwaittxtbx.Location = new System.Drawing.Point(211, 231);
+            this.DoubleClickLowerBoundwaittxtbx.Location = new System.Drawing.Point(592, 267);
             this.DoubleClickLowerBoundwaittxtbx.MaxLength = 3;
             this.DoubleClickLowerBoundwaittxtbx.Name = "DoubleClickLowerBoundwaittxtbx";
             this.DoubleClickLowerBoundwaittxtbx.Size = new System.Drawing.Size(100, 20);
             this.DoubleClickLowerBoundwaittxtbx.TabIndex = 27;
-            this.DoubleClickLowerBoundwaittxtbx.Text = "150";
+            this.DoubleClickLowerBoundwaittxtbx.Text = "110";
             this.DoubleClickLowerBoundwaittxtbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DoubleClickLowerBoundwaittxtbx_KeyPress);
             // 
             // DoubleClickupperBoundwaittxtbx
             // 
-            this.DoubleClickupperBoundwaittxtbx.Location = new System.Drawing.Point(211, 257);
+            this.DoubleClickupperBoundwaittxtbx.Location = new System.Drawing.Point(592, 293);
             this.DoubleClickupperBoundwaittxtbx.MaxLength = 3;
             this.DoubleClickupperBoundwaittxtbx.Name = "DoubleClickupperBoundwaittxtbx";
             this.DoubleClickupperBoundwaittxtbx.Size = new System.Drawing.Size(100, 20);
@@ -361,7 +364,7 @@
             // LowerDoubleClicikWaitlbl
             // 
             this.LowerDoubleClicikWaitlbl.AutoSize = true;
-            this.LowerDoubleClicikWaitlbl.Location = new System.Drawing.Point(24, 234);
+            this.LowerDoubleClicikWaitlbl.Location = new System.Drawing.Point(405, 270);
             this.LowerDoubleClicikWaitlbl.Name = "LowerDoubleClicikWaitlbl";
             this.LowerDoubleClicikWaitlbl.Size = new System.Drawing.Size(170, 13);
             this.LowerDoubleClicikWaitlbl.TabIndex = 29;
@@ -370,7 +373,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 260);
+            this.label3.Location = new System.Drawing.Point(405, 296);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 13);
             this.label3.TabIndex = 30;
@@ -379,11 +382,44 @@
             // DoubleClickWaitlbl
             // 
             this.DoubleClickWaitlbl.AutoSize = true;
-            this.DoubleClickWaitlbl.Location = new System.Drawing.Point(22, 296);
+            this.DoubleClickWaitlbl.Location = new System.Drawing.Point(30, 284);
             this.DoubleClickWaitlbl.Name = "DoubleClickWaitlbl";
             this.DoubleClickWaitlbl.Size = new System.Drawing.Size(92, 13);
             this.DoubleClickWaitlbl.TabIndex = 31;
             this.DoubleClickWaitlbl.Text = "Double Click Wait";
+            // 
+            // TopActivechkbx
+            // 
+            this.TopActivechkbx.AutoSize = true;
+            this.TopActivechkbx.Checked = true;
+            this.TopActivechkbx.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.TopActivechkbx.Location = new System.Drawing.Point(627, 12);
+            this.TopActivechkbx.Name = "TopActivechkbx";
+            this.TopActivechkbx.Size = new System.Drawing.Size(78, 17);
+            this.TopActivechkbx.TabIndex = 33;
+            this.TopActivechkbx.Text = "Top Active";
+            this.TopActivechkbx.UseVisualStyleBackColor = true;
+            this.TopActivechkbx.CheckedChanged += new System.EventHandler(this.TopActivechkbx_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(481, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Random Options";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 18);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Click Info";
             // 
             // MainFormScreenfrm
             // 
@@ -391,6 +427,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(717, 492);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TopActivechkbx);
             this.Controls.Add(this.DoubleClickWaitlbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LowerDoubleClicikWaitlbl);
@@ -468,6 +507,9 @@
         private System.Windows.Forms.Label LowerDoubleClicikWaitlbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label DoubleClickWaitlbl;
+        private System.Windows.Forms.CheckBox TopActivechkbx;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

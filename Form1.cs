@@ -122,13 +122,14 @@ namespace AutoClicker
                 LeftMouseHoldTime.Text =  Mouse.MouseHoldValue.Next(Convert.ToInt32(LowerBoundMouseHoldtxtbx.Text), Convert.ToInt32(UpperBoundMouseHoldtxtbx.Text)).ToString() ;
                 LeftMouseHoldTimelbl.Text = "Left Button Hold :" + LeftMouseHoldTime.Text;
 
-                int f = Convert.ToInt32(Mouse.DoubleClickWaitValue.Next(Convert.ToInt32(DoubleClickLowerBoundwaittxtbx.Text), Convert.ToInt32(DoubleClickupperBoundwaittxtbx.Text)));
-                DoubleClickWaitlbl.Text = "Double Click Wait = (ms) " + f;
-                Thread.Sleep(f);
+                int WaitTime = Convert.ToInt32(Mouse.DoubleClickWaitValue.Next(Convert.ToInt32(DoubleClickLowerBoundwaittxtbx.Text), Convert.ToInt32(DoubleClickupperBoundwaittxtbx.Text)));
+                DoubleClickWaitlbl.Text = "Double Click Wait = (ms) " + WaitTime;
+                Thread.Sleep(WaitTime);
                 
                 Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
-                RandomClickTimeValuelbl.Text = "click Interval: " + MainClicktimer.Interval.ToString();
+                
                 MainClicktimer.Interval = Mouse.RandomTimer.Next(Convert.ToInt32(LowerRandomBoundtxtbx.Text), Convert.ToInt32(UpperRandomBoundtxtbx.Text));
+                RandomClickTimeValuelbl.Text = "click Interval: " + MainClicktimer.Interval.ToString();
                 ClickCountlbl.Text = "Times Clicked: " + Convert.ToString(Mouse.ClickedAmount);
             }
 
@@ -137,9 +138,9 @@ namespace AutoClicker
                 Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
                 LeftMouseHoldTime.Text = Mouse.MouseHoldValue.Next(Convert.ToInt32(LowerBoundMouseHoldtxtbx.Text), Convert.ToInt32(UpperBoundMouseHoldtxtbx.Text)).ToString() ;
                 LeftMouseHoldTimelbl.Text = "Left Button Hold :" + LeftMouseHoldTime.Text;
-                int f = Convert.ToInt32(Mouse.DoubleClickWaitValue.Next(Convert.ToInt32(DoubleClickLowerBoundwaittxtbx.Text), Convert.ToInt32(DoubleClickupperBoundwaittxtbx.Text)));
-                DoubleClickWaitlbl.Text = "Double Click Wait = (ms) " + f;
-                Thread.Sleep(f);
+                int WaitTime = Convert.ToInt32(Mouse.DoubleClickWaitValue.Next(Convert.ToInt32(DoubleClickLowerBoundwaittxtbx.Text), Convert.ToInt32(DoubleClickupperBoundwaittxtbx.Text)));
+                DoubleClickWaitlbl.Text = "Double Click Wait = (ms) " + WaitTime;
+                Thread.Sleep(WaitTime);
                 Mouse.LeftMouseClick(Cursor.Position.X, Cursor.Position.Y, Convert.ToInt32(LeftMouseHoldTime.Text));
                 MainClicktimer.Interval = Convert.ToInt32(ClickIntervalInputtxtbx.Text);
                 RandomClickTimeValuelbl.Text = "click Interval: " + MainClicktimer.Interval.ToString();
@@ -236,6 +237,7 @@ namespace AutoClicker
             StopClickingBtn.Enabled = false;
             IntervalClickModeRbtn.Checked = true;
             SingleClickChkbx.Checked = true;
+            
 
 
         }
@@ -380,6 +382,20 @@ namespace AutoClicker
         private void DoubleClickupperBoundwaittxtbx_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TopActivechkbx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TopActivechkbx.Checked == true)
+            {
+                Form thisform = ActiveForm;
+                thisform.TopMost = true;
+            }
+            if (TopActivechkbx.Checked == false)
+            {
+                Form thisform = ActiveForm;
+                thisform.TopMost = false;
+            }
         }
     }
 
